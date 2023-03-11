@@ -21,6 +21,12 @@ html {
     scroll-padding-top: 7rem;
 }
 
+body {
+    background: #f7f7f7;
+}
+
+/* Header */
+
 header {
     position: fixed;
     top: 0;
@@ -76,4 +82,62 @@ header .icons a:hover {
 
 header .icons #menu-bars {
     display: none;
+}
+
+
+    /* Responsive */
+
+@media (max-width: 991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    /* Header */
+
+    header {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    header .icons #menu-bars {
+        display: inline-block;
+    }
+
+    header .navbar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: #f7f7f7;
+        border-top: .1rem solid #333;
+        border-bottom: .1rem solid #333;
+        transition: .2s linear;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1.5rem;
+        background: #fff;
+        border: .1rem solid #333;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        border-radius: .5rem;
+    }
+}
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
 }
